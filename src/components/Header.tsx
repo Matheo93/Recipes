@@ -7,8 +7,9 @@ const Header: React.FC = () => {
       <nav>
         <ul>
           <li><Link to="/">Accueil</Link></li>
-          <li><Link to="/add-recipe">Ajouter une recette magique</Link></li>
-          <li><Link to="/favorites">Favoris</Link></li>
+          <li><Link to="/recettes">Recettes</Link></li>
+          <li><Link to="/ajouter-recette">Ajouter une recette</Link></li>
+          <li><Link to="/favoris">Favoris</Link></li>
         </ul>
       </nav>
     </header>

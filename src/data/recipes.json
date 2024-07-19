@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "Lasagne Maison",
+    "description": "Une lasagne maison délicieuse, parfaitement stratifiée avec du fromage doré sur le dessus.",
+    "ingredients": [
+      "500g de viande hachée de boeuf",
+      "12 feuilles de lasagne",
+      "800g de tomates concassées",
+      "2 oignons",
+      "3 gousses d'ail",
+      "200g de mozzarella râpée",
+      "100g de parmesan râpé",
+      "50g de beurre",
+      "50g de farine",
+      "500ml de lait",
+      "Sel, poivre, basilic frais"
+    ],
+    "instructions": [
+      "Préchauffez le four à 180°C.",
+      "Faites revenir les oignons et l'ail hachés dans un peu d'huile d'olive.",
+      "Ajoutez la viande hachée et faites cuire jusqu'à ce qu'elle soit dorée.",
+      "Ajoutez les tomates concassées, salez, poivrez, et laissez mijoter pendant 30 minutes.",
+      "Préparez la béchamel en faisant fondre le beurre dans une casserole, ajoutez la farine et mélangez bien.",
+      "Versez le lait petit à petit tout en remuant jusqu'à ce que la sauce épaississe. Salez et poivrez."
+    ],
+    "image": "/images/recipes/url_lasagne.png",
+    "preparationTime": "1 heure",
+    "servings": 4,
+    "tips": "Laissez reposer la lasagne quelques minutes avant de servir pour qu'elle se tienne mieux."
+  },
+  {
+    "id": 2,
+    "title": "Pancakes",
+    "description": "Des pancakes moelleux et délicieux.",
+    "ingredients": [
+      "200g de farine",
+      "300ml de lait",
+      "2 oeufs",
+      "50g de sucre",
+      "1 pincée de sel",
+      "1 cuillère à soupe d'huile"
+    ],
+    "instructions": [
+      "Mélangez la farine et le sucre.",
+      "Ajoutez les oeufs et mélangez bien.",
+      "Ajoutez le lait progressivement en mélangeant pour éviter les grumeaux.",
+      "Ajoutez une pincée de sel et l'huile.",
+      "Faites chauffer une poêle et versez une louche de pâte.",
+      "Laissez cuire jusqu'à ce que des bulles apparaissent à la surface, puis retournez et faites cuire l'autre côté."
+    ],
+    "image": "/images/recipes/url_pancakes.png",
+    "preparationTime": "20 minutes",
+    "servings": 4,
+    "tips": "Servez avec du sirop d'érable pour un goût authentique."
+  }
+]

@@ -1,0 +1,19 @@
+.recipe-detail {
+    padding: 16px;
+  }
+  
+  .recipe-detail h1 {
+    font-size: 2em;
+    margin-bottom: 16px;
+  }
+  
+  .recipe-detail h2 {
+    font-size: 1.5em;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .recipe-detail ul, .recipe-detail ol {
+    margin-left: 20px;
+  }
+  

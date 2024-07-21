@@ -1,16 +1,8 @@
-// src/components/RecipeDetail.tsx
 import React from 'react';
+import { Recipe } from '../types';
 
 interface RecipeDetailProps {
-  recipe: {
-    title: string;
-    image: string;
-    ingredients: string[];
-    instructions: string[];
-    preparationTime: string;
-    servings: number;
-    tips?: string;
-  };
+  recipe: Recipe;
 }
 
 const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }) => {
@@ -19,7 +11,6 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }) => {
       <h2>{recipe.title}</h2>
       <img src={recipe.image} alt={recipe.title} />
       <p>Temps de préparation: {recipe.preparationTime}</p>
-      <p>Portions: {recipe.servings}</p>
       <h3>Ingrédients:</h3>
       <ul>
         {recipe.ingredients.map((ingredient, index) => (
@@ -32,12 +23,6 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }) => {
           <li key={index}>{instruction}</li>
         ))}
       </ul>
-      {recipe.tips && (
-        <>
-          <h3>Conseils:</h3>
-          <p>{recipe.tips}</p>
-        </>
-      )}
     </div>
   );
 };

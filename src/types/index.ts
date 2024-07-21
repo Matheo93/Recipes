@@ -1,12 +1,24 @@
+// src/types/index.ts
+// src/types.ts
+
 export interface Recipe {
-    id: string;
-    title: string;
-    description: string;
-    ingredients: string[];
-    instructions: string[];
-    category: string;
-    cuisine: string;
-    prepTime: number;
-    servings: number;
-    image: string;
-  }
+  id: number;
+  title: string;
+  description: string;
+  ingredients: string[];
+  instructions: string[];
+  image: string;
+  preparationTime: string;
+  type: string;
+  isFavorite?: boolean;
+}
+
+
+export interface RecipeFilterProps {
+  selectedType: string;
+  onTypeChange: (type: string) => void;
+}
+
+export interface RecipeListProps {
+  recipes: Recipe[];
+}

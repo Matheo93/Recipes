@@ -1,0 +1,21 @@
+/* src/components/RecipeFilter.css */
+.recipe-filter {
+    margin: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  
+  .recipe-filter label {
+    margin-right: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .recipe-filter select {
+    padding: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+  

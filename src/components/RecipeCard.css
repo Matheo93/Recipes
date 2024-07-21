@@ -1,0 +1,64 @@
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 16px;
+    max-width: 300px;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .recipe-content {
+    padding: 16px;
+  }
+  
+  .recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .recipe-title {
+    margin: 0;
+    font-size: 1.25em;
+  }
+  
+  .favorite-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .recipe-description {
+    margin: 8px 0;
+  }
+  
+  .recipe-time {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+  }
+  
+  .cook-button {
+    padding: 16px 16px; /* Augmenter la hauteur du bouton */
+    background-color: #ff7043;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    width: 100%; /* Maintenir la largeur à 100% */
+    font-size: 1em; /* Ajuster la taille du texte si nécessaire */
+  }
+  
+  .cook-button:hover {
+    background-color: #ff5722;
+  }
+  
+  .cook-button:active {
+    background-color: #e64a19;
+  }
+  

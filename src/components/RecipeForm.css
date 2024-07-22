@@ -71,4 +71,16 @@
     font-size: 16px;
     align-self: center;
   }
+
+  .recipe-form {
+    border: 2px solid #ccc; /* Bordure de 2px avec couleur grise */
+    padding: 25px; /* Espace intérieur de 25px */
+    border-radius: 15px; /* Angles légèrement arrondis */
+    max-width: 600px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+    background-color: #F5F5DC; /* Couleur de fond blanche */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  
   

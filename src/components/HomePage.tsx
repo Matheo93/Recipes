@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
   );
 
   return (
-    <div>
+    <div className='home-page'  >
       <div className="homepage-header">
         <div className="homepage-text">
           <h1>Découvrez des recettes qui inspirent !</h1>

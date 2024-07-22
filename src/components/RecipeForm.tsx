@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './RecipeForm.css';
 import { useNavigate } from 'react-router-dom';
 import { Recipe } from '../types';
+import { div } from '@tensorflow/tfjs';
+import backgroundImage from '../images/background.png';
 
 const RecipeForm: React.FC = () => {
   const [title, setTitle] = useState<string>('');

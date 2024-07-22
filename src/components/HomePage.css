@@ -32,3 +32,7 @@
     padding: 20px;
   }
   
+  .home-page {
+    background-color: #FAF0E6;
+    min-height: 100vh;
+  }

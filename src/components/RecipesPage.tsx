@@ -13,7 +13,7 @@ const RecipesPage: React.FC = () => {
         "500g de viande hachée de boeuf",
         "12 feuilles de lasagne",
         "800g de tomates concassées",
-        "2 oignons",
+        "2 oignons", 
         "3 gousses d'ail",
         "200g de mozzarella râpée",
         "100g de parmesan râpé",

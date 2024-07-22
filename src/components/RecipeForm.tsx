@@ -6,14 +6,16 @@ import { div } from '@tensorflow/tfjs';
 import backgroundImage from '../images/background.png';
 
 const RecipeForm: React.FC = () => {
+  // États pour stocker les informations de la recette
   const [title, setTitle] = useState<string>('');
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [instructions, setInstructions] = useState<string[]>([]);
-  const [description, setDescription] = useState<string>(''); // Ajoutez l'état pour la description
+  const [description, setDescription] = useState<string>('');
   const [preparationTime, setPreparationTime] = useState<string>('20 Min');
   const [image, setImage] = useState<string>('');
   const navigate = useNavigate();
 
+  // Fonction pour ajouter un ingrédient
   const handleAddIngredient = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && e.currentTarget.value) {
       setIngredients([...ingredients, e.currentTarget.value]);
@@ -21,6 +23,7 @@ const RecipeForm: React.FC = () => {
     }
   };
 
+  // Fonction pour ajouter une instruction
   const handleAddInstruction = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && e.currentTarget.value) {
       setInstructions([...instructions, e.currentTarget.value]);
@@ -28,6 +31,7 @@ const RecipeForm: React.FC = () => {
     }
   };
 
+  // Fonction pour gérer le changement d'image
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const reader = new FileReader();
@@ -38,6 +42,7 @@ const RecipeForm: React.FC = () => {
     }
   };
 
+  // Fonction pour soumettre le formulaire
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newRecipe: Recipe = {
@@ -45,12 +50,13 @@ const RecipeForm: React.FC = () => {
       title,
       ingredients,
       instructions,
-      description, // Ajoutez la description ici
+      description,
       image,
       preparationTime,
-      type: 'plat', // Remplacez par le type approprié si nécessaire
+      type: 'plat', // Type par défaut
     };
 
+    // Sauvegarde de la nouvelle recette dans le localStorage
     const savedRecipes = localStorage.getItem('userRecipes');
     const userRecipes = savedRecipes ? JSON.parse(savedRecipes) : [];
     userRecipes.push(newRecipe);
@@ -59,9 +65,11 @@ const RecipeForm: React.FC = () => {
     navigate('/recettes');
   };
 
+  // Rendu du formulaire
   return (
     <form onSubmit={handleSubmit} className="recipe-form">
       <h2>Ajouter une nouvelle recette</h2>
+      {/* Champs pour le titre */}
       <label>
         Titre :
         <input
@@ -73,6 +81,7 @@ const RecipeForm: React.FC = () => {
           className="form-input"
         />
       </label>
+      {/* Champ pour les ingrédients */}
       <label>
         Ingrédient : (Tomate, poivron, sel, ...)
         <input
@@ -81,6 +90,7 @@ const RecipeForm: React.FC = () => {
           className="form-input"
         />
       </label>
+      {/* Champ pour les instructions */}
       <label>
         Instructions : (Appuyez sur Entrée pour ajouter chaque instruction)
         <textarea
@@ -88,6 +98,7 @@ const RecipeForm: React.FC = () => {
           className="form-input"
         />
       </label>
+      {/* Champ pour la description */}
       <label>
         Description :
         <textarea
@@ -96,6 +107,7 @@ const RecipeForm: React.FC = () => {
           className="form-input"
         />
       </label>
+      {/* Champ pour le temps de préparation */}
       <label>
         Temps de préparation :
         <input
@@ -105,6 +117,7 @@ const RecipeForm: React.FC = () => {
           className="form-input"
         />
       </label>
+      {/* Champ pour l'upload d'image */}
       <label>
         <button type="button" className="photo-button">
           Une petite photo ?
@@ -115,6 +128,7 @@ const RecipeForm: React.FC = () => {
           />
         </button>
       </label>
+      {/* Bouton de soumission */}
       <button type="submit" className="submit-button">Concocter ma recette</button>
     </form>
   );

@@ -1,9 +1,11 @@
+// Importation des dépendances nécessaires
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RecipeCard.css';
 import favIconWhite from '../assets/favori.png';
 import favIconBlack from '../assets/favori (1).png';
 
+// Définition de l'interface pour les props du composant
 interface RecipeCardProps {
   id: number;
   title: string;
@@ -14,6 +16,7 @@ interface RecipeCardProps {
   isFavorite: boolean;
 }
 
+// Définition du composant RecipeCard
 const RecipeCard: React.FC<RecipeCardProps> = ({
   id,
   title,
@@ -23,12 +26,15 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   onFavoriteToggle,
   isFavorite,
 }) => {
+  // Hook pour la navigation
   const navigate = useNavigate();
 
+  // Fonction pour naviguer vers la page de détail de la recette
   const handleNavigate = () => {
     navigate(`/recipe/${id}`);
   };
 
+  // Rendu du composant
   return (
     <div className="recipe-card">
       <img src={image} alt={title} className="recipe-image" />

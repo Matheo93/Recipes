@@ -43,11 +43,16 @@ const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
 
   // Fonction pour basculer l'état de favori d'une recette
   const handleFavoriteToggle = (id: number) => {
-    setFavorites(prevFavorites =>
-      prevFavorites.includes(id)
-        ? prevFavorites.filter(favId => favId !== id)
-        : [...prevFavorites, id]
-    );
+    setFavorites(prevFavorites => {
+      // Vérification si prevFavorites est défini et est un tableau
+      if (prevFavorites && Array.isArray(prevFavorites)) {
+        return prevFavorites.includes(id)
+          ? prevFavorites.filter(favId => favId !== id)
+          : [...prevFavorites, id];
+      }
+      // Si prevFavorites est indéfini ou n'est pas un tableau, initialiser avec l'ID actuel
+      return [id];
+    });
   };
 
   // Rendu du composant
@@ -62,7 +67,8 @@ const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
           image={recipe.image}
           preparationTime={recipe.preparationTime}
           onFavoriteToggle={handleFavoriteToggle}
-          isFavorite={favorites.includes(recipe.id)}
+          // Vérification si favorites est défini et est un tableau
+          isFavorite={favorites && Array.isArray(favorites) && favorites.includes(recipe.id)}
         />
       ))}
     </div>

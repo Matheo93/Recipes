@@ -30,16 +30,18 @@ const FavoriteRecipes: React.FC<FavoriteRecipesProps> = ({ allRecipes }) => {
     if (savedFavorites) {
       const favoriteIds = JSON.parse(savedFavorites) as number[];
       // Filtrer les recettes favorites parmi toutes les recettes
-      const favorites = allRecipes.filter(recipe => favoriteIds.includes(recipe.id));
+      const favorites = allRecipes.filter(recipe => 
+        favoriteIds && Array.isArray(favoriteIds) && favoriteIds.includes(recipe.id)
+      );
       setFavoriteRecipes(favorites);
     }
   }, [allRecipes]);
 
   // Fonction pour basculer l'état de favori d'une recette
   const handleFavoriteToggle = (id: number) => {
-    const updatedFavorites = favorites.includes(id)
+    const updatedFavorites = favorites && Array.isArray(favorites) && favorites.includes(id)
       ? favorites.filter(favId => favId !== id)
-      : [...favorites, id];
+      : [...(favorites || []), id];
     setFavorites(updatedFavorites);
     // Sauvegarder les favoris dans le localStorage
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
@@ -60,7 +62,7 @@ const FavoriteRecipes: React.FC<FavoriteRecipesProps> = ({ allRecipes }) => {
             <div className="recipe-header">
               <h3 className="recipe-title">{recipe.title}</h3>
               <img
-                src={favorites.includes(recipe.id) ? favIconBlack : favIconWhite}
+                src={favorites && Array.isArray(favorites) && favorites.includes(recipe.id) ? favIconBlack : favIconWhite}
                 alt="Favorite Icon"
                 className="favorite-icon"
                 onClick={() => handleFavoriteToggle(recipe.id)}
